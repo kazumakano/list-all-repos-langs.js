@@ -1,0 +1,13 @@
+{
+  "name": "list-all-repos-langs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "kazumakano",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@octokit/core": "^3.5.1"
+  }
+}
