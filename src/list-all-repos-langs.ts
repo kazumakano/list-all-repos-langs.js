@@ -10,16 +10,16 @@ export default async function listAllReposLangs(userName: string, token: string)
 
   const repos = await octokit.request("GET /users/{username}/repos", {
     username: userName
-  })    // get public repositories list
+  })    // get list of public repositories
 
   let langDict: LangDict = {}
-  for (let r of repos.data) {
+  for (const r of repos.data) {
     const langs = await octokit.request("GET /repos/{owner}/{repo}/languages", {
       owner: userName,
       repo: r.name
-    })    // get languages list
+    })    // get list of languages
 
-    for (let l in langs.data) {
+    for (const l in langs.data) {
       if (l in langDict) {
         langDict[l] += langs.data[l]
       }
