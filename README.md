@@ -13,8 +13,8 @@ Function `listAllReposLangs()` returns Object in which pairs of language and the
 For example:
 ```js
 {
-  "JavaScript": 2000,
-  "HTML": 500,
-  "CSS": 1000
+  JavaScript: 2000,
+  HTML: 500,
+  CSS: 1000
 }
 ```
