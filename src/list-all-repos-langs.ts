@@ -1,7 +1,7 @@
 import { Octokit } from "@octokit/core"
 
 
-interface LangDict {
+export type LangDict = {
   [name: string]: number
 }
 
