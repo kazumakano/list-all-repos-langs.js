@@ -5,8 +5,8 @@ export type LangDict = {
   [name: string]: number
 }
 
-export default async function listAllReposLangs(userName: string, token: string): Promise<LangDict> {
-  const octokit = new Octokit({auth: token})
+export default async function listAllReposLangs(userName: string, token?: string): Promise<LangDict> {
+  const octokit = new Octokit(token == null ? undefined : {auth: token})
 
   const repos = await octokit.request("GET /users/{username}/repos", {
     username: userName
