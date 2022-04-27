@@ -2,6 +2,7 @@
   "name": "list-all-repos-langs",
   "version": "1.0.0",
   "main": "index.js",
+  "repository": "https://github.com/kazumakano/list-all-repos-langs.js.git",
   "author": "kazumakano",
   "license": "MIT",
   "devDependencies": {
