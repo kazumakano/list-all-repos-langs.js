@@ -6,13 +6,11 @@ export type LangDict = {
 }
 
 export default async function listAllReposLangs(userName: string, token?: string, signal?: AbortSignal): Promise<LangDict> {
-  const octokit = new Octokit(token == null ? undefined : {auth: token})
+  const octokit = new Octokit({auth: token})
 
   const repos = await octokit.request("GET /users/{username}/repos", {
     username: userName,
-    request: {
-      signal: signal
-    }
+    request: {signal: signal}
   })    // get list of public repositories
 
   let langDict: LangDict = {}
@@ -20,9 +18,7 @@ export default async function listAllReposLangs(userName: string, token?: string
     const langs = await octokit.request("GET /repos/{owner}/{repo}/languages", {
       owner: userName,
       repo: r.name,
-      request: {
-        signal: signal
-      }
+      request: {signal: signal}
     })    // get list of languages
 
     for (const l in langs.data) {
