@@ -9,7 +9,7 @@ It returns an object that stores pairs of the language name and number of bytes 
 const langDict = await listAllReposLangs("your user name")
 ```
 GitHub limits the number of requests within a specific time.
-You can specify your personal access token to ease the limitation.
+You can set your personal access token to ease the limitation.
 Request management by passing abort signals may also be helpful for clean-up processes.
 ```js
 const abortCtrler = new AbortController()
